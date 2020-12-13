@@ -38,6 +38,7 @@ const PostForm = ({ history }) => {
 
   const onSubmit = e => {
     e.preventDefault();
+    dispatch(createPost(formData, history));
   }
 
 
