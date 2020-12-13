@@ -1,6 +1,7 @@
 const express = require('express');
 const AppError = require('./middlewares/appError');
 const globalErrorHandler = require('./middlewares/globalErrorHandler');
+const path = require('path');
 
 const app = express();
 

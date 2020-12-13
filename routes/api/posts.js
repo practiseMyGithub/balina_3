@@ -77,7 +77,7 @@ router.get('/page', auth, asyncErrHandler(async (req, res, next) => {
 
   const page = req.query.page * 1 || 1;
   limit = features.query.options.limit;
-  const numPages = await Math.ceil(await Post.countDocuments() / limit);
+  const numPages = await Math.ceil(Post.countDocuments() / limit);
 
   const items = await Post.find(); // can also put limit here for the storein case needed
 
