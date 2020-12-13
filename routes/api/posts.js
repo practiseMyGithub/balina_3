@@ -22,7 +22,7 @@ router.post('/', asyncErrHandler(async (req, res, next) => {
   // const profile = await Profile.findOne({ user: req.user.id });
 
   const newPost = {
-    profile,
+    // profile,
     title: req.body.title,
     // price: req.body.price,
     category: req.body.category,
