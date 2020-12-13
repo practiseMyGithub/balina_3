@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createPost } from '../../actions/post'
 // import { formatDate } from '../utils/helper'
 // import Moment from 'react-moment'

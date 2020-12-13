@@ -6,9 +6,7 @@ const ExpenseForm = () => {
 
   }
 
-  const onSubmit = e => {
 
-  }
 
   // Close form by clicking close btn
   const closeForm = () => {

@@ -1,4 +1,6 @@
 const express = require('express');
+const AppError = require('./middlewares/appError');
+const globalErrorHandler = require('./middlewares/globalErrorHandler');
 
 const app = express();
 
@@ -15,6 +17,13 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+
+
+app.use((req, res, next) => {
+  next(new AppError(`Can't find - ${req.originalUrl}`), 404);
+})
+
+app.use(globalErrorHandler);
 
 
 
