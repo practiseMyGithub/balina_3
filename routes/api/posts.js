@@ -9,9 +9,10 @@ const Post = require('../../models/Post');
 const APIFeatures = require('../../utils/apiFeatures');
 const AppError = require('../../middlewares/appError');
 
-router.get('/', (req, res, next) => {
-  res.send('Get posts');
-})
+
+// router.get('/', (req, res, next) => {
+//   res.send('Get posts');
+// })
 
 
 // @route     POST api/posts
@@ -48,15 +49,16 @@ router.post('/', asyncErrHandler(async (req, res, next) => {
 // desc       Get all posts for filter dropdown in dashboard
 // @access    Private
 router.get('/', asyncErrHandler(async (req, res, next) => {
-  const limit = 20;  //default limit
+  // const limit = 20;  //default limit
 
-  const features = new APIFeatures(Post, req.query, limit)
-    .filter()
-    .sort()
-    .limitFields()
-    .paginate()
+  // const features = new APIFeatures(Post, req.query, limit)
+  //   .filter()
+  //   .sort()
+  //   .limitFields()
+  //   .paginate()
 
-  const posts = await features.query;
+  // const posts = await features.query;
+  const posts = await Post.find();
   res.status(200).json(posts);
 }))
 

@@ -32,15 +32,22 @@ export const postReducer = (state = {
     //     loading: false
     //   }
     // for posts dashboard
+    // case LOAD_POSTS:
+    //   return {
+    //     ...state,
+    //     posts: payload.data,
+    //     page: payload.page,
+    //     pages: payload.numPages,
+    //     limit: payload.limit,
+    //     loading: false,
+    //     error: {}, // just to clear error after post id is not found from Review page
+    //   }
+
     case LOAD_POSTS:
       return {
         ...state,
-        posts: payload.data,
-        page: payload.page,
-        pages: payload.numPages,
-        limit: payload.limit,
-        loading: false,
-        error: {}, // just to clear error after post id is not found from Review page
+        posts: payload,
+        loading: false
       }
     // case GET_POST:
     //   return {
