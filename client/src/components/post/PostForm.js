@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { createPost } from '../../actions/post'
+import { useDispatch, useSelector } from 'react-redux'
+import { createPost } from '../../actions/post'
 // import { formatDate } from '../utils/helper'
 import Moment from 'react-moment'
 
 
 const PostForm = ({ history }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     title: '',
