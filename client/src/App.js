@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './components/pages/Home'
 import Post from './components/pages/Post'
+import Expense from './components/pages/Post'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/posts" component={Post} />
+        <Route exact path="/expenses" component={Expense} />
       </Switch>
     </Router>
   );
