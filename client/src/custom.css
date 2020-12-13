@@ -1,0 +1,210 @@
+#home{
+  /* background: url(./img/homepage/bali-panorama1.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* min-width: 100vh; */
+  color: white;
+}
+
+.navbar .footer{
+  opacity: 0.9
+}
+
+.content{
+  padding: 150px 40px 0 40px
+  
+}
+
+/* .footer {
+  min-height: 10vh;
+} */
+
+/* .custom-container{
+  padding: 80px 40px;
+} */
+
+
+.card-form{
+  opacity: 0.8;
+}
+
+/* infoboard edit */
+.btn-edit-info{
+  margin-top: -30px
+}
+
+#committees .card:hover{
+  background: rgb(92, 153, 223);
+  color: #fff;
+}
+
+#committees img{
+  margin-top: -60px
+}
+
+.alert{
+  padding: 4px;
+  color: white;
+}
+
+.error{
+  background-color: red;
+}
+
+.success{
+  background-color: green;
+}
+
+.edit-review-form{
+  display: none;
+}
+
+/* Expense */
+#total-expense{
+  color: red;
+}
+
+.price-red{
+  color: red;
+}
+
+/* upload image account */
+.underline{
+  border-bottom: 2px solid;
+  color: darkgrey;
+}
+
+#footer{
+  background: #333;
+  color: silver;
+  padding: 0px 30px
+}
+
+i.fab.fa-facebook {
+ color: #3b5998;
+ margin-right: 10px;
+}
+
+
+i.fab.fa-twitter {
+  color: #00acee;
+  margin-right: 10px;
+}
+
+/* already vote */
+i.fas.fa-check-circle {
+  color: #66FFB2
+}
+
+/* missed to vote */
+i.far.fa-times-circle {
+  color: #FF9999
+}
+
+
+.agree-votes,.disagree-votes,.total-votes{
+  float: left;
+  color: silver;
+}
+
+.agree-votes {
+  background-color:#292323;
+  padding: 5px;
+  font-size: 20px; 
+  border-radius: 10px;
+}
+
+.disagree-votes {
+  background-color: #292323;
+  padding: 5px;
+  font-size: 20px; 
+  margin: 0 10px 5px 5px;
+  border-radius: 10px;
+}
+
+.avgRatings {
+  /* background-color: #292323; */
+  /* padding: 0 8px 8px 0; */
+  font-size: 20px; 
+  /* margin: 0 5px; */
+  border-radius: 10px;
+  color: #000
+}
+
+.total-votes {
+  font-size: 15px;
+  color: #000
+}
+
+/* pagination number */
+.activePageNum {
+  background-color: #00CC66;
+  color: #fff
+}
+
+.alert {
+  padding: 12px 0;
+  font-size: large;
+  text-align: center
+}
+
+/* ----------------------------------------------- */
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.comment-count {
+  background: var(--light-color);
+  color: var(--primary-color);
+  padding: 0.1rem 0.2rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+
