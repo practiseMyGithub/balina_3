@@ -31,7 +31,7 @@ const PostForm = ({ history }) => {
   }
 
   const { title, category, optionVote, finalVote, status, description, complain } = formData;
-  g
+
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
