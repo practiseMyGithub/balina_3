@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const newPost = new Schema({
-  profile: {
-    type: Schema.Types.ObjectId,
-    ref: 'profile'
-  },
+  // profile: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'profile'
+  // },
   title: {
     type: String,
     required: [true, 'Empty title is not allowed'],

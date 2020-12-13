@@ -7,7 +7,7 @@ import {
   // FILTER_POSTS,
   // CLEAR_POST,
   // UPDATE_LIKES,
-  // POST_ERROR,
+  POST_ERROR,
   // GET_COUNTDOWN,
   // PAGINATE_ERROR,
   // PAGINATE_POSTS
@@ -83,11 +83,11 @@ export const postReducer = (state = {
     //     posts: state.posts.map(post => post._id === payload.id ? { ...post, likes: payload.likes } : post),
     //     loading: false
     //   }
-    // case POST_ERROR:
-    //   return {
-    //     ...state,
-    //     error: payload
-    //   }
+    case POST_ERROR:
+      return {
+        ...state,
+        error: payload
+      }
     // case PAGINATE_ERROR:
     //   return {
     //     ...state,

@@ -27,10 +27,9 @@ export const createPost = (formData, history) => async dispatch => {
     const { data } = await axios.post('/api/posts', formData, config);
     dispatch({ type: CREATE_POST, payload: data });
     dispatch(setAlert('Post created successfully!', 'success'));
-    dispatch(clearPost());
-    setTimeout(() => {
-      history.push('/posts')
-    }, 2000);
+    // setTimeout(() => {
+    //   history.push('/posts')
+    // }, 2000);
 
   } catch (error) {
     // console.log(error.response.data);
@@ -42,11 +41,16 @@ export const createPost = (formData, history) => async dispatch => {
     } else if (response.message.includes('Final date')) {
       message = error.response.data.message;
       dispatch(setAlert(message, 'danger'))
-    } else {
-      const msgArr = Object.values(error.response.data.error.errors).map(el => el.message);
-      message = msgArr.join('. ');
-      dispatch(setAlert(message, 'danger'))
     }
+    // else {
+    //   const errors = error.response.data.error.errors;
+    //   console.log(error.response)
+    // if (error !== undefined) {
+    //   const msgArr = Object.values(errors).map(el => el.message);
+    //   message = msgArr.join('. ');
+    //   dispatch(setAlert(message, 'danger'))
+    // }
+    // }
 
     dispatch({
       type: POST_ERROR,

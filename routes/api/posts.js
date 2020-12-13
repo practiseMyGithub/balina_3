@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const { auth, isProfileExist, isPostAuthor } = require('../../middlewares/authHandler');
+const { auth } = require('../../middlewares/authHandler');
 const asyncErrHandler = require('../../middlewares/asyncErrorHandler');
 const Post = require('../../models/Post');
 // const Profile = require('../../models/Profile');
@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 // @access    Private
 router.post('/', asyncErrHandler(async (req, res, next) => {
   // Check the profile 
-  const profile = await Profile.findOne({ user: req.user.id });
+  // const profile = await Profile.findOne({ user: req.user.id });
 
   const newPost = {
     profile,

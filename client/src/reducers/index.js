@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 // import authReducer from './auth'
-// import alertReducer from './alert'
+import { alertReducer } from './alert'
 import { postReducer } from './post'
 // import profileReducer from './profile'
 // import commentReducer from './comment'
@@ -14,7 +14,7 @@ import { postReducer } from './post'
 export default combineReducers({
   // auth: authReducer,
   // user: userReducer,
-  // alert: alertReducer,
+  alert: alertReducer,
   // profile: profileReducer,
   posts: postReducer,
   // comment: commentReducer,

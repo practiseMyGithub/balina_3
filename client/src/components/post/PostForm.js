@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import Moment from 'react-moment'
 import { formatDate } from '../utils/helper';
+import Alert from '../layout/Alert'
+import { createPost, clearPost } from '../../actions/post'
+import { setAlert } from '../../actions/alert'
 
-const PostForm = () => {
+const PostForm = ({ history }) => {
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -17,6 +22,8 @@ const PostForm = () => {
   });
 
 
+
+
   const setVote = () => {
     setFormData({ ...formData, status: document.querySelector('.status').checked });
     toggleActive(!activateVote)
@@ -27,7 +34,17 @@ const PostForm = () => {
   }
 
   const onChange = e => {
-    setFormData({ ...formatDate, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  const onSubmit = e => {
+    e.preventDefault();
+    if (title === '' || category === '' || description === '') {
+      return dispatch(setAlert('Empty field is not allowed', 'danger'));
+    }
+
+    dispatch(createPost(formData))
+    dispatch(clearPost());
   }
 
 
@@ -40,7 +57,7 @@ const PostForm = () => {
   return (
     <>
       <div className="w-75" style={{ position: "relative", margin: 'auto', marginTop: '120px' }}>
-        {/* <Alert /> */}
+        <Alert />
       </div>
       <div className="container w-50" >
         <div className="card">
@@ -50,14 +67,14 @@ const PostForm = () => {
           <div className="card-body">
             <div className="row">
               <div className="col-md-12">
-                <form className="form-group">
+                <form onSubmit={onSubmit} className="form-group">
                   <div className="mb-3">
                     <small>Title:</small>
-                    <input type="text" name="title" className="form-control" value={title} onChange={onChange} />
+                    <input type="text" name="title" value={title} className="form-control" onChange={onChange} />
                   </div>
                   <div className="mb-3">
                     <small>Category</small>
-                    <select id="category-post" name="category" className="form-control" value={category} onChange={onChange}>
+                    <select id="category-post" name="category" value={category} className="form-control" onChange={onChange}>
                       <option value="" className="category">..... .... .....</option>
                       <option value="Garden" className="category">Garden</option>
                       <option value="Pool" className="category">Pool</option>
@@ -92,7 +109,7 @@ const PostForm = () => {
                           togglenoOption(true)
                           toggleWithOption(false)
                         }} /> */}
-                        <input type="radio" name="optionVote" className="option mr-2" value={optionVote || ''} onChange={e => {
+                        <input type="radio" name="optionVote" value={optionVote || ''} className="option mr-2" onChange={e => {
                           setFormData({ ...formData, optionVote: false })
                           togglenoOption(true)
                           toggleWithOption(false)
@@ -115,7 +132,7 @@ const PostForm = () => {
                       {/* calender */}
                       {/* <small className="mr-3">End time:</small> <Moment format='DD/MM/YYYY' className="text-danger">{post && post.finalVote}</Moment> <br /> */}
                       <small className="mr-3">End time:</small> <Moment format='DD/MM/YYYY' className="text-danger">0000</Moment> <br />
-                      <input type="date" name="finalVote" value={finalVote || ''} className="my-3" />
+                      <input type="date" name="finalVote" value={finalVote} className="my-3" onChange={onChange} />
                     </div>
                   )}
 
