@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 // import authReducer from './auth'
 // import alertReducer from './alert'
-import postReducer from './post'
+import { postReducer } from './post'
 // import profileReducer from './profile'
 // import commentReducer from './comment'
 // import voteReducer from './vote'

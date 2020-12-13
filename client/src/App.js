@@ -9,7 +9,7 @@ import Footer from './components/layout/Footer'
 import Home from './components/pages/Home'
 import Post from './components/pages/Post'
 import Expense from './components/pages/Expenses'
-import PostForm from './components/post/PostForm';
+import PostForm from './components/post/PostForm.js';
 import MyProfile from './components/profile/MyProfile';
 import Dashboard from './components/dashboard/Index';
 import ForgotPassword from './components/auth/Forgot.js'

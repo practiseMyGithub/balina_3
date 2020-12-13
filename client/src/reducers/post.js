@@ -14,7 +14,7 @@ import {
 } from '../actions/types'
 
 
-export default (state = {
+export const postReducer = (state = {
   posts: [],
   post: null,
   countdown: null
