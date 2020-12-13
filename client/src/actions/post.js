@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {
-  // LOAD_POSTS,
+  LOAD_POSTS,
   // GET_POST,
   CREATE_POST,
   // UPDATE_POST,
@@ -57,6 +57,21 @@ export const createPost = (formData, history) => async dispatch => {
       payload: error.response && error.response.data ? error.response.data.message : error.message
     }); // - this need error state as object {}
 
+  }
+}
+
+// GET ALL POSTS
+export const loadPosts = (page, limit) => async dispatch => {
+  try {
+    // const { data } = await axios.get(`/api/posts/page?page=${page}&limit=${limit}`);
+    const { data } = await axios.get(`/api/posts/page?page=${page}`);
+    dispatch({ type: LOAD_POSTS, payload: data });
+  } catch (error) {
+    console.log(error.message);
+    dispatch({
+      type: POST_ERROR,
+      // payload: error.response && error.response.data ? error.response.data.message : error.message
+    }); // - this need error state as object {}
   }
 }
 

@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import InfoForm from '../info/InfoForm'
+import { loadPosts } from '../../actions/post'
 
 
 
 const Posts = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // dispatch(loadInfos(itemsLimit));
+    dispatch(loadPosts());
+  }, [dispatch])
+
   return (
     <div className="row">
       <div className="col-md">
