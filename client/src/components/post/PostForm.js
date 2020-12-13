@@ -43,8 +43,8 @@ const PostForm = ({ history }) => {
 
 
   const [activateVote, toggleActive] = useState(false);
-  const [withOption, toggleWithOption] = useState();
-  const [noOption, togglenoOption] = useState();
+  // const [withOption, toggleWithOption] = useState();
+  // const [noOption, togglenoOption] = useState();
 
 
 
@@ -89,7 +89,7 @@ const PostForm = ({ history }) => {
                             <input type="checkbox" name="status" value={status} className="status mr-2" onClick={setVote} /><small>Edit voting</small>
                           </>
                           {/* )} */}
-                          <input type="checkbox" name="complain" className="complain ml-4 mr-2" onClick={setComplain} /><small>complain ??</small>
+                          <input type="checkbox" name="complain" value={complain} className="complain ml-4 mr-2" onClick={setComplain} /><small>complain ??</small>
                         </div>
 
                         {/* Choose date/option for vote */}
@@ -100,22 +100,22 @@ const PostForm = ({ history }) => {
 
                               <input type="radio" name="optionVote" className="option mr-2" value={optionVote || ''} onChange={e => {
                                 setFormData({ ...formData, optionVote: false })
-                                togglenoOption(true)
-                                toggleWithOption(false)
+                                // togglenoOption(true)
+                                // toggleWithOption(false)
                               }} />
                               <small>No option</small>
 
-                              <input type="radio" name="optionVote" className="option ml-4 mr-2" value={optionVote || ''} className="option ml-3 mr-2" onChange={e => {
+                              <input type="radio" name="optionVote" className="option ml-4 mr-2" value={optionVote || ''} onChange={e => {
                                 setFormData({ ...formData, optionVote: true })
-                                togglenoOption(false)
-                                toggleWithOption(true)
+                                // togglenoOption(false)
+                                // toggleWithOption(true)
                               }} />
                               <small>With option (max. 4)</small>
-
                             </div>
+
                             {/* calender */}
                             <small className="mr-3">End time:</small> <br />
-                            <input type="date" name="finalVote" className="my-3" onChange={onChange} />
+                            <input type="date" name="finalVote" value={finalVote || ''} className="my-3" onChange={onChange} />
                           </div>
                         )}
 
