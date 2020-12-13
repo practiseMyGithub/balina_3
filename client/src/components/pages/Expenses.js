@@ -1,4 +1,5 @@
 import React from 'react'
+import ExpenseForm from '../expenses/ExpenseForm'
 
 const Expenses = () => {
 
@@ -72,7 +73,7 @@ const Expenses = () => {
             {/* <!-- add expense button --> */}
             {/* {user && user.role !== 'member' && ( */}
             <div className="col-md-2">
-              <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#expenseFormModal">
+              <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#expenseForm">
                 <i className="fas fa-plus"></i> Add Expense
               </button>
             </div>
@@ -103,6 +104,10 @@ const Expenses = () => {
             </div>
           </div>
         </div>
+
+        {/* <!-- Modal add expense window action--> */}
+        <ExpenseForm />
+
       </div>
     </div>
   )

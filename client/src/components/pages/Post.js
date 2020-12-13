@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import InfoForm from '../info/InfoForm'
 
 
 
@@ -17,6 +18,10 @@ const Posts = () => {
             className="fas fa-plus mr-2" ></i>Info</button>
         </div>
       </div>
+
+      {/* INFO FORM MODAL ACTION */}
+      <InfoForm />
+
     </div>
 
   )
