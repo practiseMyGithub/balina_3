@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { createPost } from '../../actions/post'
 // import { formatDate } from '../utils/helper'
-import Moment from 'react-moment'
+// import Moment from 'react-moment'
 
 
 const PostForm = ({ history }) => {
@@ -31,7 +31,7 @@ const PostForm = ({ history }) => {
   }
 
   const { title, category, optionVote, finalVote, status, description, complain } = formData;
-
+  g
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -47,7 +47,7 @@ const PostForm = ({ history }) => {
   const [noOption, togglenoOption] = useState();
 
 
-  const post = '';
+
 
   return (
     <>
@@ -98,14 +98,14 @@ const PostForm = ({ history }) => {
                             <div className="mb-3">
                               {/* option vote */}
 
-                              <input type="radio" name="optionVote" className="option mr-2" checked={post && !post.optionVote ? 'checked' : noOption} value={optionVote || ''} onChange={e => {
+                              <input type="radio" name="optionVote" className="option mr-2" value={optionVote || ''} onChange={e => {
                                 setFormData({ ...formData, optionVote: false })
                                 togglenoOption(true)
                                 toggleWithOption(false)
                               }} />
                               <small>No option</small>
 
-                              <input type="radio" name="optionVote" className="option ml-4 mr-2" value={optionVote || ''} checked={post && post.optionVote ? 'checked' : withOption} className="option ml-3 mr-2" onChange={e => {
+                              <input type="radio" name="optionVote" className="option ml-4 mr-2" value={optionVote || ''} className="option ml-3 mr-2" onChange={e => {
                                 setFormData({ ...formData, optionVote: true })
                                 togglenoOption(false)
                                 toggleWithOption(true)
@@ -114,7 +114,7 @@ const PostForm = ({ history }) => {
 
                             </div>
                             {/* calender */}
-                            <small className="mr-3">End time:</small> <Moment format='DD/MM/YYYY' className="text-danger">{post && post.finalVote}</Moment> <br />
+                            <small className="mr-3">End time:</small> <br />
                             <input type="date" name="finalVote" className="my-3" onChange={onChange} />
                           </div>
                         )}
@@ -124,8 +124,8 @@ const PostForm = ({ history }) => {
                           <textarea name="description" className="form-control" cols="20" rows="10" value={description} onChange={e => onChange(e)}></textarea>
                         </div>
                         <div className="float-right mt-4">
-                          <input type="submit" value={post ? 'Update Post' : 'Send Post'} className="btn btn-primary" />{' '}
-                          <Link to={post ? `/posts/${post && `${post._id}/reviews`}` : '/posts'} type="button" className="btn btn-secondary">Cancel</Link>
+                          <input type="submit" value="Send Post" className="btn btn-primary" />{' '}
+                          <Link to="/posts" type="button" className="btn btn-secondary">Cancel</Link>
                         </div>
                       </form>
                     </div>

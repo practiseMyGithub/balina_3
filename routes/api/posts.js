@@ -6,7 +6,7 @@ const Post = require('../../models/Post');
 // const Profile = require('../../models/Profile');
 // const Review = require('../../models/Review')
 // const Vote = require('../../models/Vote')
-const APIFeatures = require('../../utils/apiFeatures');
+// const APIFeatures = require('../../utils/apiFeatures');
 const AppError = require('../../middlewares/appError');
 
 router.get('/', (req, res, next) => {
