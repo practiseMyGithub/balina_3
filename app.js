@@ -3,7 +3,10 @@ const express = require('express');
 const app = express();
 
 
-app.use('/', (req, res) => res.send('API running'));
+// mounting the routes
+app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/expenses', require('./routes/api/expenses'));
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
