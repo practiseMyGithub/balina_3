@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Expenses = () => {
+const MyProfile = () => {
   return (
     <div className="row">
       <div className="col-md">
         <div className="content">
-          Expenses
+          My profile
         </div>
       </div>
     </div>
   )
 }
 
-export default Expenses
+export default MyProfile

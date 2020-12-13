@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Expenses = () => {
+const PostForm = () => {
   return (
     <div className="row">
       <div className="col-md">
         <div className="content">
-          Expenses
+
+          Post form
         </div>
       </div>
     </div>
   )
 }
 
-export default Expenses
+export default PostForm
